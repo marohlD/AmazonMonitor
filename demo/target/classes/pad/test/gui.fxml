@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pad.test.guiController">
+  <style>
+    -fx-padding: 10;
+    -fx-border-style: solid inside;
+    -fx-border-width: 2;
+    -fx-border-insets: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: blue;
+  </style>
+  <children>
+    <Label fx:id="notifMethod" alignment="CENTER_LEFT" cache="true" cacheHint="SCALE" prefHeight="60.0" prefWidth="200.0" text="Notification Method:" textAlignment="LEFT" />
+        <fx:define>
+            <ToggleGroup fx:id="notifGroup" />
+        </fx:define>
+
+        <RadioButton fx:id="emailButton" text="Email (see notification.java)" toggleGroup="$notifGroup">
+            <HBox.margin>
+                <Insets right="30.0" bottom="100.0"/>
+            </HBox.margin>
+        </RadioButton>
+
+        <RadioButton fx:id="popupButton" text="Popup" toggleGroup="$notifGroup">
+            <HBox.margin>
+                <Insets right="30.0" bottom="10.0"/>
+            </HBox.margin>
+        </RadioButton>
+        
+    <Label fx:id="inputLbl" alignment="CENTER_LEFT" cache="true" cacheHint="SCALE" prefHeight="30.0" prefWidth="200.0" text="Delay between price checks (Hours):" textAlignment="LEFT" />
+  
+    
+    <TextField fx:id="inputText" prefWidth="100.0" text="24"/>
+    <Button fx:id="monitorButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#startMonitor" text="START" textAlignment="CENTER" />
+    <Label fx:id="outputLbl" alignment="CENTER_LEFT" cache="true" cacheHint="SCALE" prefHeight="30.0" prefWidth="200.0" text="Current Price : 00.00 " textAlignment="LEFT" />
+    <Button fx:id="testButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#testNotification" text="Send Test Notification" textAlignment="CENTER" />
+  </children>
+</VBox>
